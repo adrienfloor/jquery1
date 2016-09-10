@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Carousel</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+	*{margin: 0; padding: 0;}
+
+	#carousel{
+		margin: 50px auto;
+		width: 600px;
+		height: 407px;
+		overflow: hidden;
+	}
+
+	ul {
+		list-style: none; width: 1800px;
+
+	}
+
+	li {
+		float: left;
+
+	}
+		
+
+	</style>
+	<script src="jquery.js"></script>
+	<script>
+		$(function () {
+			setInterval(function(){
+
+			     $("#carousel ul").animate({marginLeft:"-600px"},1000,function(){
+			     $("#carousel ul li:last").after($("#carousel ul li:first"));
+			     $(this).css("margin-left","0");	
+				 });
+
+		},2500);
+	});		
+	</script>
+
+
+
+</head>
+<body>
+		<div id="carousel">
+			<ul>
+				<li><img src="r50.jpg"></li>
+				<li><img src="gsxr.jpg"></li>
+				<li><img src="t110.jpg"></li>
+				<li><img src="xr750.jpg"></li>
+			</ul>
+		
+
+		</div>
+
+
+</body>
+</html>
